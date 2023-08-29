@@ -81,9 +81,42 @@ for (key, value) in dict {
 
 //task1
 //Create dictionary of 5 student list. Key is fist name and surname. Value is his examination grade.
-//для пары студентов повысить оценку (рни пересдлали экзамен)
+var students : [String: Int] = [:]
+students.count //0
+students.isEmpty //true
+
+students["Ivan Ivanov"] = 5
+students["Elena Petrova"] = 4
+students["Alex Shumaher"] = 3
+students["Olga Gdanova"] = 4
+students["Dmitry Gorbunov"] = 2
+
+print(students)
+//["Alex Shumaher": 3, "Ivan Ivanov": 5, "Elena Petrova": 4, "Olga Gdanova": 4, "Dmitry Gorbunov": 2]
+
+students.count //5
+students.isEmpty //false
+
+//change grade for two students. They repassed exam.
+
+//students["Alex Shumaher"] = 5
+//students["Dmitry Gorbunov"] = 4
+
+students.updateValue(5, forKey: "Alex Shumaher")
+students.updateValue(4, forKey: "Dmitry Gorbunov")
+print(students)
+//["Alex Shumaher": 5, "Dmitry Gorbunov": 4, "Ivan Ivanov": 5, "Elena Petrova": 4, "Olga Gdanova": 4]
+
 //пришли еще два студента, добавить их в этот словарь
+students["Petr Ivanov"] = 4
+students["Evgenii Tolstoii"] = 5
+
+print(students)
+//["Petr Ivanov": 4, "Evgenii Tolstoii": 5, "Dmitry Gorbunov": 4, "Alex Shumaher": 5, "Elena Petrova": 4, "Ivan Ivanov": 5, "Olga Gdanova": 4]
+
 //два студента ушли, их нужно убрать
+
+
 //посчитать общий балл всей группы
 // посчитать средний балл (гуглить)
 
