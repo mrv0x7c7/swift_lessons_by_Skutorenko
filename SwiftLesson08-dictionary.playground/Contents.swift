@@ -130,8 +130,14 @@ if let removedValue = students.removeValue(forKey: removeStudent) {
 print(students)
 //["Evgenii Tolstoii": 5, "Petr Ivanov": 4, "Elena Petrova": 4, "Ivan Ivanov": 5, "Olga Gdanova": 4]
 
+//count total grade of student group
 
-//посчитать общий балл всей группы
+var totalGrade = 0
+for i in students.values {
+    totalGrade += i
+}
+print(totalGrade) //22
+
 // посчитать средний балл (гуглить)
 
 //task2
