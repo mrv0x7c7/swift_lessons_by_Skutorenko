@@ -107,14 +107,28 @@ students.updateValue(4, forKey: "Dmitry Gorbunov")
 print(students)
 //["Alex Shumaher": 5, "Dmitry Gorbunov": 4, "Ivan Ivanov": 5, "Elena Petrova": 4, "Olga Gdanova": 4]
 
-//пришли еще два студента, добавить их в этот словарь
+//arrived two students yet. Add them in to a dictionary
 students["Petr Ivanov"] = 4
 students["Evgenii Tolstoii"] = 5
 
 print(students)
 //["Petr Ivanov": 4, "Evgenii Tolstoii": 5, "Dmitry Gorbunov": 4, "Alex Shumaher": 5, "Elena Petrova": 4, "Ivan Ivanov": 5, "Olga Gdanova": 4]
 
-//два студента ушли, их нужно убрать
+//Two students went. Remove them from the dictionary.
+students["Alex Shumaher"] = nil
+
+print(students)
+//["Petr Ivanov": 4, "Evgenii Tolstoii": 5, "Ivan Ivanov": 5, "Elena Petrova": 4, "Olga Gdanova": 4, "Dmitry Gorbunov": 4]
+var removeStudent = "Dmitry Gorbunov"
+
+if let removedValue = students.removeValue(forKey: removeStudent) {
+    print("The removed student name is \(removeStudent).")
+} else {
+    print("The student dictionary doesn't contain a value for \(removeStudent).")
+}
+
+print(students)
+//["Evgenii Tolstoii": 5, "Petr Ivanov": 4, "Elena Petrova": 4, "Ivan Ivanov": 5, "Olga Gdanova": 4]
 
 
 //посчитать общий балл всей группы
