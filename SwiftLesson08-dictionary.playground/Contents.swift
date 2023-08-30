@@ -147,11 +147,13 @@ averageGrade = Double(totalGrade) / Double(students.count)
 print(averageGrade) //4.4
 
 
-
-
 //task2
 //Crate dictionary key month and value days in month [String: Int]
-//вывести на экран с помощью цикла с тюплом
+var md = ["Jan": 31, "Feb": 28, "Mar": 31, "Apr": 30, "May": 31, "Jun": 30, "Jul":31, "Aug":31, "Sep": 30, "Oct": 31, "Nov":30, "Dec": 31]
+
+// print(md) with loop with tuple
+
+
 //использовать цикл и пройтись по массиву ключей, и для каждого массива ключа брали значение из словаря и выводили пару
 
 //task3
