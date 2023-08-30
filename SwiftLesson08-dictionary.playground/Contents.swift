@@ -130,15 +130,24 @@ if let removedValue = students.removeValue(forKey: removeStudent) {
 print(students)
 //["Evgenii Tolstoii": 5, "Petr Ivanov": 4, "Elena Petrova": 4, "Ivan Ivanov": 5, "Olga Gdanova": 4]
 
-//count total grade of student group
+//calculate total grade of students group
 
 var totalGrade = 0
+var averageGrade: Double = 0
+
 for i in students.values {
     totalGrade += i
 }
+
 print(totalGrade) //22
 
-// посчитать средний балл (гуглить)
+//calculate average grade of students group
+averageGrade = Double(totalGrade) / Double(students.count)
+
+print(averageGrade) //4.4
+
+
+
 
 //task2
 //Crate dictionary key month and value days in month [String: Int]
