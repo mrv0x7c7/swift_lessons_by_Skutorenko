@@ -149,15 +149,23 @@ print(averageGrade) //4.4
 
 //task2
 //Crate dictionary key month and value days in month [String: Int]
-var md = ["Jan": 31, "Feb": 28, "Mar": 31, "Apr": 30, "May": 31, "Jun": 30, "Jul":31, "Aug":31, "Sep": 30, "Oct": 31, "Nov":30, "Dec": 31]
+let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+let days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+var monthDict: [String: Int] = [:]
 
-// print(md) with loop with tuple
+for (index, month) in months.enumerated() {
+    let day = days[index]
+    monthDict[month] = day
+}
 
+print(monthDict)
+//["Aug": 31, "Feb": 28, "Jun": 30, "Apr": 30, "Mar": 31, "May": 31, "Sep": 30, "Nov": 30, "Jan": 31, "Jul": 31, "Dec": 31, "Oct": 31]
 
-//использовать цикл и пройтись по массиву ключей, и для каждого массива ключа брали значение из словаря и выводили пару
+//use loop in keys array. Print pair key plus value for each key from array.
+
 
 //task3
-//шахматы
+//chess
 //создать словарь ключ это адрес ячейки String, а ключ Bool
 // 64 пары
 //  испольхзовать цикл в цикле
