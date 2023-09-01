@@ -76,11 +76,9 @@ for (key, value) in dict {
  key = комп, value = mac
  */
 
-
-//homeWork
-
-//task1
-//Create dictionary of 5 student list. Key is fist name and surname. Value is his examination grade.
+// HomeWork
+// Task1
+// Create dictionary of 5 student list. Key is fist name and surname. Value is his examination grade.
 var students : [String: Int] = [:]
 students.count //0
 students.isEmpty //true
@@ -92,33 +90,33 @@ students["Olga Gdanova"] = 4
 students["Dmitry Gorbunov"] = 2
 
 print(students)
-//["Alex Shumaher": 3, "Ivan Ivanov": 5, "Elena Petrova": 4, "Olga Gdanova": 4, "Dmitry Gorbunov": 2]
+// ["Alex Shumaher": 3, "Ivan Ivanov": 5, "Elena Petrova": 4, "Olga Gdanova": 4, "Dmitry Gorbunov": 2]
 
 students.count //5
 students.isEmpty //false
 
-//change grade for two students. They repassed exam.
+// change grade for two students. They repassed exam.
 
-//students["Alex Shumaher"] = 5
-//students["Dmitry Gorbunov"] = 4
+// students["Alex Shumaher"] = 5
+// students["Dmitry Gorbunov"] = 4
 
 students.updateValue(5, forKey: "Alex Shumaher")
 students.updateValue(4, forKey: "Dmitry Gorbunov")
 print(students)
-//["Alex Shumaher": 5, "Dmitry Gorbunov": 4, "Ivan Ivanov": 5, "Elena Petrova": 4, "Olga Gdanova": 4]
+// ["Alex Shumaher": 5, "Dmitry Gorbunov": 4, "Ivan Ivanov": 5, "Elena Petrova": 4, "Olga Gdanova": 4]
 
-//arrived two students yet. Add them in to a dictionary
+// arrived two students yet. Add them in to a dictionary
 students["Petr Ivanov"] = 4
 students["Evgenii Tolstoii"] = 5
 
 print(students)
-//["Petr Ivanov": 4, "Evgenii Tolstoii": 5, "Dmitry Gorbunov": 4, "Alex Shumaher": 5, "Elena Petrova": 4, "Ivan Ivanov": 5, "Olga Gdanova": 4]
+// ["Petr Ivanov": 4, "Evgenii Tolstoii": 5, "Dmitry Gorbunov": 4, "Alex Shumaher": 5, "Elena Petrova": 4, "Ivan Ivanov": 5, "Olga Gdanova": 4]
 
-//Two students went. Remove them from the dictionary.
+// Two students went. Remove them from the dictionary.
 students["Alex Shumaher"] = nil
 
 print(students)
-//["Petr Ivanov": 4, "Evgenii Tolstoii": 5, "Ivan Ivanov": 5, "Elena Petrova": 4, "Olga Gdanova": 4, "Dmitry Gorbunov": 4]
+// ["Petr Ivanov": 4, "Evgenii Tolstoii": 5, "Ivan Ivanov": 5, "Elena Petrova": 4, "Olga Gdanova": 4, "Dmitry Gorbunov": 4]
 var removeStudent = "Dmitry Gorbunov"
 
 if let removedValue = students.removeValue(forKey: removeStudent) {
@@ -128,9 +126,9 @@ if let removedValue = students.removeValue(forKey: removeStudent) {
 }
 
 print(students)
-//["Evgenii Tolstoii": 5, "Petr Ivanov": 4, "Elena Petrova": 4, "Ivan Ivanov": 5, "Olga Gdanova": 4]
+// ["Evgenii Tolstoii": 5, "Petr Ivanov": 4, "Elena Petrova": 4, "Ivan Ivanov": 5, "Olga Gdanova": 4]
 
-//calculate total grade of students group
+// calculate total grade of students group
 
 var totalGrade = 0
 var averageGrade: Double = 0
@@ -146,9 +144,9 @@ averageGrade = Double(totalGrade) / Double(students.count)
 
 print(averageGrade) //4.4
 
-
-//task2
-//Crate dictionary key month and value days in month [String: Int]
+// Task2
+// Crate dictionary key month and value days in month [String: Int]
+// Use loop in keys array. Print pair key plus value for each key from array.
 let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 let days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 var monthDict: [String: Int] = [:]
@@ -159,16 +157,28 @@ for (index, month) in months.enumerated() {
 }
 
 print(monthDict)
-//["Aug": 31, "Feb": 28, "Jun": 30, "Apr": 30, "Mar": 31, "May": 31, "Sep": 30, "Nov": 30, "Jan": 31, "Jul": 31, "Dec": 31, "Oct": 31]
+// ["Aug": 31, "Feb": 28, "Jun": 30, "Apr": 30, "Mar": 31, "May": 31, "Sep": 30, "Nov": 30, "Jan": 31, "Jul": 31, "Dec": 31, "Oct": 31]
 
-//use loop in keys array. Print pair key plus value for each key from array.
+// Task3
+// Chess
+// Create Dictionary where key is String and value is Bool
+// Add 64 pairs. Use loop in loop
+// First array is letters a...h. Second array is digits 1...8 for each letter from first array
+
+var chess: [String: Bool] = [:]
+var letters = [Character]()
+var digits = [Int]()
+let alphabet = Array("abcdefghijklmnopqrstuvwxyz")
 
 
-//task3
-//chess
-//создать словарь ключ это адрес ячейки String, а ключ Bool
-// 64 пары
-//  испольхзовать цикл в цикле
-// один массив это буковки
-// для каждой букцы другой цикл от 1 до 8
-//
+
+for var i in digits.count..<8 {
+    i += 1
+    digits.append(i)
+    for digits in alphabet {
+            letters = alphabet
+    }
+}
+print(digits)
+print(letters)
+
