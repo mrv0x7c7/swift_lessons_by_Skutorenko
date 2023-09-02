@@ -166,19 +166,27 @@ print(monthDict)
 // First array is letters a...h. Second array is digits 1...8 for each letter from first array
 
 var chess: [String: Bool] = [:]
-var letters = [Character]()
+var letters = [String]()
 var digits = [Int]()
 let alphabet = Array("abcdefghijklmnopqrstuvwxyz")
 
+for i in 0..<8 {
+        digits.append(i+1)
+        let letterString = String(alphabet[i]) // Convert character to string
+            letters.append(letterString)
+}
 
+print(digits) //[1, 2, 3, 4, 5, 6, 7, 8]
+print(letters) //["a", "b", "c", "d", "e", "f", "g", "h"]
 
-for var i in digits.count..<8 {
-    i += 1
-    digits.append(i)
-    for digits in alphabet {
-            letters = alphabet
+for (index, letter) in letters.enumerated() {
+    for number in digits {
+        if (number + (index + 1)) % 2 == 0 {
+            chess[letter + String(number)] = false
+        } else {
+            chess[letter + String(number)] = true
+        }
     }
 }
-print(digits)
-print(letters)
-
+print(chess.count) //64
+print(chess) //["h5": true, "h2": false, "g6": true, "h3": true, "a7": false, "h4": false, "d6": false, "e7": false, "g5": false, "e8": true, "f8": false, "f2": false, "a4": true, "e3": false, "e6": true, "a6": true, "c7": false, "g1": false, "h7": true, "f1": true, "d4": false, "c6": true, "a2": true, "c3": false, "d2": false, "b3": true, "d5": true, "h1": true, "c1": false, "b1": true, "d1": true, "e1": false, "a3": false, "e4": true, "g3": false, "a8": true, "b5": true, "f3": true, "e2": true, "g4": true, "d8": false, "c5": false, "c8": true, "f5": true, "b4": false, "a5": false, "b8": false, "f4": false, "g2": true, "d3": true, "a1": false, "c4": true, "g7": false, "d7": true, "h8": false, "c2": true, "h6": false, "b6": false, "e5": false, "f6": false, "g8": true, "b7": true, "b2": false, "f7": true]
