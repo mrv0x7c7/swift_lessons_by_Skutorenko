@@ -176,12 +176,9 @@ for i in 0..<8 {
             letters.append(letterString)
 }
 
-print(digits) //[1, 2, 3, 4, 5, 6, 7, 8]
-print(letters) //["a", "b", "c", "d", "e", "f", "g", "h"]
-
 for (index, letter) in letters.enumerated() {
     for number in digits {
-        if (number + (index + 1)) % 2 == 0 {
+        if (number + index) % 2 == 0 {
             chess[letter + String(number)] = false
         } else {
             chess[letter + String(number)] = true
