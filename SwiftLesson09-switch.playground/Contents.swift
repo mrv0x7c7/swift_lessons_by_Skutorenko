@@ -100,7 +100,24 @@ switch array[2] {
 //Task 1
 
 //Create a String with any text for 200 chars
+let someSting = "Today is a beautiful day, with temperatures around 75°F. Let's go for a picnic at the park and enjoy the sunshine! Don't forget to bring some snacks and iced tea. It's a perfect day for outdoor fun. 12345"
+
 //Create a loop with a switch. Calculate how many vowels, consonants, numbers and characters are in the string
+let vowels: [Character] = ["a", "e", "i", "o", "u",]
+let consonants: [Character] = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
+let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+let characters: [Character] = ["@", "#", "$", "%", "&", "!", "?", "*", "+", "="]
+
+switch someSting {
+    
+   
+    
+    default: break
+}
+
+
+print("someSting is \(someSting.count) chars")
+//someSting is 204 chars
 
 //Task 2
 //Создать свитч который будет принимать возраст человека, и выводить описание периода жизни
