@@ -100,24 +100,31 @@ switch array[2] {
 //Task 1
 
 //Create a String with any text for 200 chars
-let someSting = "Today is a beautiful day, with temperatures around 75°F. Let's go for a picnic at the park and enjoy the sunshine! Don't forget to bring some snacks and iced tea. It's a perfect day for outdoor fun. 12345"
+let someString = "Today is a beautiful day, with temperatures around 75°F. Let's go for a picnic at the park and enjoy the sunshine! Don't forget to bring some snacks and iced tea. It's a perfect day for outdoor fun. 12345"
 
 //Create a loop with a switch. Calculate how many vowels, consonants, numbers and characters are in the string
-let vowels: [Character] = ["a", "e", "i", "o", "u",]
-let consonants: [Character] = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
-let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-let characters: [Character] = ["@", "#", "$", "%", "&", "!", "?", "*", "+", "="]
+var vowelsCounter = 0
+var consonantsCounter = 0
+var charactersCounter = 0
+var numbersCounter = 0
 
-switch someSting {
-    
-   
-    
-    default: break
+for i in someString {
+    switch i {
+        case "a", "e", "i", "o", "u":
+        vowelsCounter += 1
+        case "b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z":
+            consonantsCounter += 1
+        case "@", "#", "$", "%", "&", "!", "?", "*", "+", "=", ".", ",", "°":
+            charactersCounter += 1
+        case "0", "1", "2", "3", "4", "5", "6", "7", "8", "9":
+            numbersCounter += 1
+        
+        default: break
+    }
 }
+print("someString has \(someString.count) chars, \(vowelsCounter) vowels, \(consonantsCounter) consonants, \(charactersCounter) characters and \(numbersCounter) numbers.")
 
 
-print("someSting is \(someSting.count) chars")
-//someSting is 204 chars
 
 //Task 2
 //Создать свитч который будет принимать возраст человека, и выводить описание периода жизни
