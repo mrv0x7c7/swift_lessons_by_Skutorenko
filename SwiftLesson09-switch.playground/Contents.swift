@@ -31,37 +31,37 @@ var age = 66
 var name = "Alex"
 
 switch age {
-    case 0...16:
-        print("scoolboy")
-    case 17...21:
-        print("student")
-    case 22...50: break
-    case 51, 56, 57, 60:
-        print("senior")
+case 0...16:
+    print("scoolboy")
+case 17...21:
+    print("student")
+case 22...50: break
+case 51, 56, 57, 60:
+    print("senior")
     
-    default: break
+default: break
 }
 //senior
 
 switch name {
-    case "Alex" where age < 50:
-        print("Hi buddy!")
-    case "Alex" where age >= 50:
-        print("I don't know you")
-    default: break
+case "Alex" where age < 50:
+    print("Hi buddy!")
+case "Alex" where age >= 50:
+    print("I don't know you")
+default: break
 }
 //I don't know you
 
 let tuple = (name, age)
 
 switch tuple {
-    case ("Alex", 60): print("Hi Alex 60")
-    case ("Alex", 59): print("Hi Alex 59")
+case ("Alex", 60): print("Hi Alex 60")
+case ("Alex", 59): print("Hi Alex 59")
     
-    case (_, let number) where number >= 65 && number <= 70: print("Hi old man")
+case (_, let number) where number >= 65 && number <= 70: print("Hi old man")
     
-    case ("Alex", _): print("Hi Alex")
-    default: break
+case ("Alex", _): print("Hi Alex")
+default: break
 }
 //Hi old man
 
@@ -69,12 +69,12 @@ let point = (5,-6)
 
 switch point {
     
-    case let (x,y) where x == y:
-        print("x == y")
-    case let (x,y) where x == -y:
-        print("x == -y")
-    case let (_,y) where y < 0:
-        print("y < 0")
+case let (x,y) where x == y:
+    print("x == y")
+case let (x,y) where x == -y:
+    print("x == -y")
+case let (_,y) where y < 0:
+    print("y < 0")
     
 default: break
 }
@@ -84,14 +84,14 @@ default: break
 let array : [Any] = [5, 5.4, Float(5.4)]
 
 switch array[2] {
-    case _ as Int:
-        print("Int")
-    case _ as Float:
-        print("Float")
-    case _ as Double:
-        print("Double")
+case _ as Int:
+    print("Int")
+case _ as Float:
+    print("Float")
+case _ as Double:
+    print("Double")
         
-    default: break
+default: break
 }
 //Float
 
@@ -110,16 +110,16 @@ var numbersCounter = 0
 
 for i in someString {
     switch i {
-        case "a", "e", "i", "o", "u":
+    case "a", "e", "i", "o", "u":
         vowelsCounter += 1
-        case "b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z":
-            consonantsCounter += 1
-        case "@", "#", "$", "%", "&", "!", "?", "*", "+", "=", ".", ",", "°":
-            charactersCounter += 1
-        case "0", "1", "2", "3", "4", "5", "6", "7", "8", "9":
-            numbersCounter += 1
+    case "b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z":
+        consonantsCounter += 1
+    case "@", "#", "$", "%", "&", "!", "?", "*", "+", "=", ".", ",", "°":
+        charactersCounter += 1
+    case "0", "1", "2", "3", "4", "5", "6", "7", "8", "9":
+        numbersCounter += 1
         
-        default: break
+    default: break
     }
 }
 print("someString has \(someString.count) chars, \(vowelsCounter) vowels, \(consonantsCounter) consonants, \(charactersCounter) characters and \(numbersCounter) numbers.")
@@ -129,6 +129,28 @@ print("someString has \(someString.count) chars, \(vowelsCounter) vowels, \(cons
 //Task 2
 //Создать свитч который будет принимать возраст человека, и выводить описание периода жизни
 //
+var inputUserAge = 32
+
+switch inputUserAge {
+case 0...2:
+    print("Infancy")
+case 2...12:
+    print("Childhood")
+case 12...18:
+    print("Adolescence")
+case 18...25:
+    print("Youth")
+case 25...55:
+    print("Adulthood")
+case 55...70:
+    print("Elderly Age")
+case 70...122:
+    print("Old Age")
+    
+default: break
+}
+
+
 
 //Task 3
 //есть студент, у него есть ФИО (3 строки)
