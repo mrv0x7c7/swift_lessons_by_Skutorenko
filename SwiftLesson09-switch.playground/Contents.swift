@@ -95,6 +95,9 @@ default: break
 }
 //Float
 
+
+
+
 //Home work
 
 //Task 1
@@ -124,10 +127,8 @@ for i in someString {
 }
 print("someString has \(someString.count) chars, \(vowelsCounter) vowels, \(consonantsCounter) consonants, \(charactersCounter) characters and \(numbersCounter) numbers.")
 
-
-
 //Task 2
-//Создать свитч который будет принимать возраст человека, и выводить описание периода жизни
+//Create a switch that will check a man's age and output the name of this stage of life.
 //
 var inputUserAge = 32
 
@@ -150,8 +151,6 @@ case 70...122:
 default: break
 }
 
-
-
 //Task 3
 //есть студент, у него есть ФИО (3 строки)
 //в одном свитче если его имя начинается например с A или с O то вы должны обращаться к студенту по имени
@@ -160,6 +159,34 @@ default: break
 //Если ни одно их вышеописанного не сработает, то образщайтесь к нему по ФИО
 //
 
+var inputFirstName = "Alex"
+var inputMidleName = "Ivanovich"
+var inputlastName = "Petrov"
+
+var fullNameArray = [String]()
+var studentNameArray = [String]()
+var student_1 = [String: String]()
+
+fullNameArray.append("firstName")
+fullNameArray.append("midleName")
+fullNameArray.append("lastName")
+
+studentNameArray.append(inputFirstName)
+studentNameArray.append(inputMidleName)
+studentNameArray.append(inputlastName)
+
+for (index, value) in fullNameArray.enumerated() {
+    let student = studentNameArray[index]
+    student_1[value] = student
+}
+print(student_1)
+//["midleName": "Ivanovich", "firstName": "Alex", "lastName": "Petrov"]
+
+
+
+
+
+ 
 //Task 4
 // поле для морского боя 10х10
 //можно использовать цифра или цифры с буквами
