@@ -55,12 +55,17 @@ default: break
 let tuple = (name, age)
 
 switch tuple {
-case ("Alex", 60): print("Hi Alex 60")
-case ("Alex", 59): print("Hi Alex 59")
+case ("Alex", 60): 
+    print("Hi Alex 60")
+case ("Alex", 59): 
+    print("Hi Alex 59")
     
-case (_, let number) where number >= 65 && number <= 70: print("Hi old man")
+case (_, let number) where number >= 65 && number <= 70: 
+    print("Hi old man")
     
-case ("Alex", _): print("Hi Alex")
+case ("Alex", _): 
+    print("Hi Alex")
+
 default: break
 }
 //Hi old man
@@ -160,29 +165,40 @@ default: break
 //
 
 var inputFirstName = "Alex"
-var inputMidleName = "Ivanovich"
+var inputMiddleName = "Ivanovich"
 var inputlastName = "Petrov"
 
-var fullNameArray = [String]()
-var studentNameArray = [String]()
+let fullNameArray = ["firstName", "midleName", "lastName"]
+var studentNameArray = [inputFirstName, inputMiddleName, inputlastName]
+
 var student_1 = [String: String]()
 
-fullNameArray.append("firstName")
-fullNameArray.append("midleName")
-fullNameArray.append("lastName")
-
-studentNameArray.append(inputFirstName)
-studentNameArray.append(inputMidleName)
-studentNameArray.append(inputlastName)
-
-for (index, value) in fullNameArray.enumerated() {
-    let student = studentNameArray[index]
-    student_1[value] = student
+for (index, key) in fullNameArray.enumerated() {
+    let value = studentNameArray[index]
+    student_1[key] = value
 }
 print(student_1)
-//["midleName": "Ivanovich", "firstName": "Alex", "lastName": "Petrov"]
+//["middleName": "Ivanovich", "firstName": "Alex", "lastName": "Petrov"]
 
-
+if let firstName = student_1["firstName"],
+   let middleName = student_1["middleName"],
+   let lastName = student_1["lastName"] {
+    
+    let firstLetterName = String(firstName.prefix(1))
+    let firstLetterMiddlename = String(middleName.prefix(1))
+    let firstLetterLastName = String(lastName.prefix(1))
+    
+    switch (firstLetterName, firstLetterMiddlename, firstLetterLastName) {
+    case  ("A", _, _), ("O", _, _):
+        print(firstName)
+    case (_, "V", _), (_, "D", _):
+        print("\(firstName + middleName)")
+    case (_, _, "Y"), (_, _, "Z"):
+        print(lastName)
+    default:
+        print("\(firstName + middleName + lastName)")
+    }
+}
 
 
 
