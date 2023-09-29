@@ -164,12 +164,12 @@ default: break
 //Если ни одно их вышеописанного не сработает, то образщайтесь к нему по ФИО
 //
 
-var inputFirstName = "Alex"
+var inputFirstName = "Lex"
 var inputMiddleName = "Ivanovich"
-var inputlastName = "Petrov"
+var inputLastName = "Petrov"
 
-let fullNameArray = ["firstName", "midleName", "lastName"]
-var studentNameArray = [inputFirstName, inputMiddleName, inputlastName]
+let fullNameArray = ["firstName", "middleName", "lastName"]
+var studentNameArray = [inputFirstName, inputMiddleName, inputLastName]
 
 var student_1 = [String: String]()
 
@@ -185,18 +185,18 @@ if let firstName = student_1["firstName"],
    let lastName = student_1["lastName"] {
     
     let firstLetterName = String(firstName.prefix(1))
-    let firstLetterMiddlename = String(middleName.prefix(1))
+    let firstLetterMiddleName = String(middleName.prefix(1))
     let firstLetterLastName = String(lastName.prefix(1))
     
-    switch (firstLetterName, firstLetterMiddlename, firstLetterLastName) {
+    switch (firstLetterName, firstLetterMiddleName, firstLetterLastName) {
     case  ("A", _, _), ("O", _, _):
         print(firstName)
     case (_, "V", _), (_, "D", _):
-        print("\(firstName + middleName)")
+        print("\(firstName) \(middleName)")
     case (_, _, "Y"), (_, _, "Z"):
         print(lastName)
     default:
-        print("\(firstName + middleName + lastName)")
+        print("\(firstName) \(middleName) \(lastName)")
     }
 }
 
