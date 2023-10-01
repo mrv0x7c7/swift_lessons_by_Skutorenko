@@ -199,11 +199,42 @@ if let firstName = student_1["firstName"],
         print("\(firstName) \(middleName) \(lastName)")
     }
 }
-
-
-
  
 //Task 4
-// поле для морского боя 10х10
-//можно использовать цифра или цифры с буквами
+import Foundation
+
+//create sea battlefield 10x10 (use digits or digits with letters)
+let gridSize = 10
+var board = [[String]](repeating: [String](repeating: " ", count: gridSize), count: gridSize)
+
+//place ships
+func placeShipsRandomly() {
+    let sumOfShips = 10
+    var shipPlaced = 0
+    
+    while shipPlaced < sumOfShips {
+        let x = Int.random(in: 0...gridSize)
+        let y = Int.random(in: 0...gridSize)
+        
+        if board[x][y] == " " {
+            board[x][y] = "x"
+            shipPlaced += 1
+        }
+    }
+}
+
+//printBoard
+func gameBoard() {
+    for row in board {
+        let rowString = row.joined(separator: " ")
+        print(rowString)
+    }
+}
+
+//placeShipsRandomly()
+gameBoard()
+
 //Представьте, что у вас осталось несколько караблей. Некоторые из них подпиты, некоторые из них целы. Нужно создать такой свитч который будет получать тюпл поинт (x,y). Нужно вернуть одно из трех значений: мимо, ранил, убил
+
+
+
