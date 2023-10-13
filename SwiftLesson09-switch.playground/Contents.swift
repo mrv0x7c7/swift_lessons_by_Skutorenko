@@ -59,10 +59,8 @@ case ("Alex", 60):
     print("Hi Alex 60")
 case ("Alex", 59): 
     print("Hi Alex 59")
-    
 case (_, let number) where number >= 65 && number <= 70: 
     print("Hi old man")
-    
 case ("Alex", _): 
     print("Hi Alex")
 
@@ -131,6 +129,8 @@ for i in someString {
     }
 }
 print("someString has \(someString.count) chars, \(vowelsCounter) vowels, \(consonantsCounter) consonants, \(charactersCounter) characters and \(numbersCounter) numbers.")
+//someString has 204 chars, 58 vowels, 88 consonants, 6 characters and 7 numbers.
+
 
 //Task 2
 //Create a switch that will check a man's age and output the name of this stage of life.
@@ -155,6 +155,7 @@ case 70...122:
     
 default: break
 }
+//Adulthood
 
 //Task 3
 //есть студент, у него есть ФИО (3 строки)
@@ -164,77 +165,23 @@ default: break
 //Если ни одно их вышеописанного не сработает, то образщайтесь к нему по ФИО
 //
 
-var inputFirstName = "Lex"
-var inputMiddleName = "Ivanovich"
-var inputLastName = "Petrov"
+var nameTuple = (first:"James", middle:"Alan", last:"Hetfield")
 
-let fullNameArray = ["firstName", "middleName", "lastName"]
-var studentNameArray = [inputFirstName, inputMiddleName, inputLastName]
-
-var student_1 = [String: String]()
-
-for (index, key) in fullNameArray.enumerated() {
-    let value = studentNameArray[index]
-    student_1[key] = value
-}
-print(student_1)
-//["middleName": "Ivanovich", "firstName": "Alex", "lastName": "Petrov"]
-
-if let firstName = student_1["firstName"],
-   let middleName = student_1["middleName"],
-   let lastName = student_1["lastName"] {
+switch nameTuple {
+case (let first, _, _) where first.hasPrefix("A") || first.hasPrefix("O"):
+    print(nameTuple.first)
+case (_, let middle, _) where middle.hasPrefix("V") || middle.hasPrefix("D"):
+    print("\(nameTuple.first) \(nameTuple.middle)")
+case (_, _, let last) where last.hasPrefix("Y") || last.hasPrefix("Z"):
+    print(nameTuple.last)
     
-    let firstLetterName = String(firstName.prefix(1))
-    let firstLetterMiddleName = String(middleName.prefix(1))
-    let firstLetterLastName = String(lastName.prefix(1))
-    
-    switch (firstLetterName, firstLetterMiddleName, firstLetterLastName) {
-    case  ("A", _, _), ("O", _, _):
-        print(firstName)
-    case (_, "V", _), (_, "D", _):
-        print("\(firstName) \(middleName)")
-    case (_, _, "Y"), (_, _, "Z"):
-        print(lastName)
-    default:
-        print("\(firstName) \(middleName) \(lastName)")
-    }
+default: print("\(nameTuple.first) \(nameTuple.middle) \(nameTuple.last)")
 }
- 
+
 //Task 4
-import Foundation
+// Create sea battlefield 10x10 (use digits or digits with letters)
 
-//create sea battlefield 10x10 (use digits or digits with letters)
-let gridSize = 10
-var board = [[String]](repeating: [String](repeating: " ", count: gridSize), count: gridSize)
-
-//place ships
-func placeShipsRandomly() {
-    let sumOfShips = 10
-    var shipPlaced = 0
-    
-    while shipPlaced < sumOfShips {
-        let x = Int.random(in: 0...gridSize)
-        let y = Int.random(in: 0...gridSize)
-        
-        if board[x][y] == " " {
-            board[x][y] = "x"
-            shipPlaced += 1
-        }
-    }
-}
-
-//printBoard
-func gameBoard() {
-    for row in board {
-        let rowString = row.joined(separator: " ")
-        print(rowString)
-    }
-}
-
-//placeShipsRandomly()
-gameBoard()
+  
 
 //Представьте, что у вас осталось несколько караблей. Некоторые из них подпиты, некоторые из них целы. Нужно создать такой свитч который будет получать тюпл поинт (x,y). Нужно вернуть одно из трех значений: мимо, ранил, убил
-
-
 
