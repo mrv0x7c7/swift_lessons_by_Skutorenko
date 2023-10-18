@@ -179,9 +179,29 @@ default: print("\(nameTuple.first) \(nameTuple.middle) \(nameTuple.last)")
 }
 
 //Task 4
-// Create sea battlefield 10x10 (use digits or digits with letters)
+//Create sea battlefield 10x10 (use digits or digits with letters)
+//var board = (x:1...10, y:1...10)
 
-  
+//Imagine that you have three ships, for example, one with a single deck, one with two decks, and one with four decks.
+let shipOne = (x:5, y:8, w:1, h:1)
+let shipTwo = (x:2, y:2, w:2, h:1)
+let shipThree = (x:6, y:7, w:1, h:3)
 
-//Представьте, что у вас осталось несколько караблей. Некоторые из них подпиты, некоторые из них целы. Нужно создать такой свитч который будет получать тюпл поинт (x,y). Нужно вернуть одно из трех значений: мимо, ранил, убил
+//Some of these ships are undamaged, some are damaged, and some have been destroyed.
+//You need to create switch that takes a get of points (x, y) as input.
+//The switch should return one of three values: "undamaged," "damaged," or "killed."
+
+let checkPoint = (x:6, y:8)
+
+switch checkPoint {
+case (x:5, y:8):
+    print("kill")
+case (x:2...4, y:2):
+    print("ship is damaged")
+case (x:6, y:7...10):
+    print("ship is damaged")
+default:
+    print("This cell is empty")
+}
+
 
