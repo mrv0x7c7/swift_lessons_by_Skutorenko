@@ -81,6 +81,25 @@ iShouldDoThis()
 // Task 1
 
 // func heart возвращает строку с юникодом сердечка (создать парочку аналогчиных функций)
+func heart() -> String {
+    return "\u{2764}"
+}
+
+print(heart())
+
+func greet(person: String) -> String {
+    return "Hello, " + person + " \(heart()) " + "!"
+}
+
+print(greet(person: "Anna"))
+
+func drink(drinkType: String) -> String {
+    return "What do you prefer " + drinkType + "?"
+}
+
+print(drink(drinkType: "coffee") + " \u{2615}")
+
+
 // создать один print в который будут поступать эти функции и с помощью канкатенации строк сложить какую-то красивую строку
 
 // Task 2
