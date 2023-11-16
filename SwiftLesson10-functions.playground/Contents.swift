@@ -77,10 +77,9 @@ iShouldDoThis()
 
 
 // Home work
-
 // Task 1
-
-// func heart возвращает строку с юникодом сердечка (создать парочку аналогчиных функций)
+// Create a function called heart that returns a string with a Unicode heart.
+// Additionally, create a couple more functions.
 func heart() -> String {
     return "\u{2764}"
 }
@@ -99,8 +98,8 @@ func drink(drinkType: String) -> String {
 
 print(drink(drinkType: "coffee") + " \u{2615}")
 
-
-// создать один print в который будут поступать эти функции и с помощью канкатенации строк сложить какую-то красивую строку
+// Combine all these functions into a single print statement using string concatenation.
+print("\(greet(person: "Anna")) " + "\(drink(drinkType: "coffee"))" + " \(heart())")
 
 // Task 2
 // Шахматы
