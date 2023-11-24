@@ -102,9 +102,31 @@ print(drink(drinkType: "coffee") + " \u{2615}")
 print("\(greet(person: "Anna")) " + "\(drink(drinkType: "coffee"))" + " \(heart())")
 
 // Task 2
-// Шахматы
-// Создать функцию которая принимает два параметра строка и символ a5 b6 и она должна вывести слово белая или черная
-// нужно забрать значение этой функции в дргую переменную
+// Chess
+// Create a function that takes two parameters, a string and a character,
+// for example, 'a5' and 'b6'.
+// This function should return the word 'white' or 'black'.
+// Return of this function add to variable
+
+func chess (row: String, column: Int) ->  String {
+
+    let characters = "abcdefgh"
+    var rowInt = 0
+    for i in characters {
+        rowInt += 1
+        if row == String(i) {
+            break
+        }
+    }
+    if rowInt % 2 == column % 2 {
+        return "black"
+    } else {
+        return "white"
+    }
+}
+
+let result = chess(row: "b", column: 6)
+print (result)
 
 // Task 3
 
