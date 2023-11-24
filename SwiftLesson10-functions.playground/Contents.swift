@@ -130,8 +130,24 @@ print (result)
 
 // Task 3
 
-// Создать массив
-// Создать функцию которая будет принимать массив и возвращать массив в обратном порядке
+// Ctaete array
+let numArray = [1, 2, 3, 4, 5]
+
+// Create a function that takes an array and returns the inverse array
+func someFunc(num: [Int]) -> [Int] {
+    
+    var reverseArray = [Int]()
+    
+    for element in num.reversed() {
+        reverseArray.append(element)
+    }
+    
+    return reverseArray
+}
+
+let reversedArray = someFunc(num: numArray)
+print(reversedArray)
+
 // Аналогичная функция которая принимает sequence
 
 // функция принимала secuence и вызывала массив (одна функция выызывает другую)
