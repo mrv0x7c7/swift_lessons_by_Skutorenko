@@ -148,7 +148,20 @@ func someFunc(num: [Int]) -> [Int] {
 let reversedArray = someFunc(num: numArray)
 print(reversedArray)
 
-// Аналогичная функция которая принимает sequence
+// The same function that takes the sequence
+
+func calculateCash(inSequence range: Int...) -> [Int] {
+    
+    var reverseCash = [Int]()
+    
+    for value in range.reversed() {
+        reverseCash.append(value)
+    }
+    
+    return reverseCash
+}
+
+print(calculateCash(inSequence: 5,10,15,100,1))
 
 // функция принимала secuence и вызывала массив (одна функция выызывает другую)
 
